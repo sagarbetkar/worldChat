@@ -16,11 +16,6 @@ $(function() {
     "#d300e7"
   ];
 
-  window.SpeechRecognition =
-    window.SpeechRecognition || window.webkitSpeechRecognition;
-  const recognition = new SpeechRecognition();
-  recognition.interimResults = true;
-
   const socket = io();
   const $window = $(window);
   const $usernameInput = $(".usernameInput");
@@ -35,6 +30,28 @@ $(function() {
   let connected = false;
   let typing = false;
   let $currentInput = $usernameInput.focus();
+  let recognition;
+
+  window.SpeechRecognition =
+    window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (window.SpeechRecognition) {
+    recognition = new SpeechRecognition();
+    recognition.interimResults = true;
+
+    recognition.addEventListener("result", e => {
+      const transcript = Array.from(e.results)
+        .map(result => result[0])
+        .map(result => result.transcript)
+        .join("");
+
+      $inputMessage.val(transcript);
+      if (e.results[0].isFinal) {
+        sendMessage();
+      }
+    });
+  } else {
+    $microphone.setAttribute("disabled", "");
+  }
 
   socket.on("login", data => {
     connected = true;
@@ -250,18 +267,6 @@ $(function() {
       } else {
         setUsername();
       }
-    }
-  });
-
-  recognition.addEventListener("result", e => {
-    const transcript = Array.from(e.results)
-      .map(result => result[0])
-      .map(result => result.transcript)
-      .join("");
-
-    $inputMessage.val(transcript);
-    if (e.results[0].isFinal) {
-      sendMessage();
     }
   });
 

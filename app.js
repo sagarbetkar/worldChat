@@ -14,7 +14,6 @@ io.on("connection", socket => {
   let addedUser;
 
   socket.on("add user", username => {
-    console.log(username);
     if (addedUser) return;
 
     socket.username = username;
