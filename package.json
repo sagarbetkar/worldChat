@@ -1,0 +1,24 @@
+{
+  "name": "worldchat",
+  "version": "1.0.0",
+  "description": "A Chat Box where world can connect with each other.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sagarbetkar/worldChat.git"
+  },
+  "author": "Sagar Betkar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sagarbetkar/worldChat/issues"
+  },
+  "homepage": "https://github.com/sagarbetkar/worldChat#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  }
+}
