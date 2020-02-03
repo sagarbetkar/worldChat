@@ -38,8 +38,8 @@ npm run test
 
 👤 **Sagar Betkar**
 
-* Website: http://sagarbetkar.tk/
-* Github: [@sagarbetkar](https://github.com/sagarbetkar)
+- Website: http://sagarbetkar.tk/
+- Github: [@sagarbetkar](https://github.com/sagarbetkar)
 
 ## 🤝 Contributing
 
@@ -54,5 +54,4 @@ Give a ⭐️ if this project helped you!
 Copyright © 2020 [Sagar Betkar](https://github.com/sagarbetkar).<br />
 This project is [ISC](https://github.com/sagarbetkar/worldChat/blob/master/LICENSE) licensed.
 
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
+---
